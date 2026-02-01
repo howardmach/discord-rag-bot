@@ -1,0 +1,71 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.log
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+.env.*
+
+# -------------------------
+# ChromaDB persistent storage
+# -------------------------
+chroma/
+chroma/index/
+chroma/*.sqlite3
+chroma/*.db
+
+# -------------------------
+# Model caches
+# -------------------------
+# HuggingFace cache
+~/.cache/huggingface/
+cache/
+hf_cache/
+huggingface/
+
+# SentenceTransformers cache
+sentence_transformers/
+
+# Ollama models (never commit)
+~/.ollama/
+
+# -------------------------
+# Data artifacts
+# -------------------------
+# If you want to keep your markdown files private:
+# data/*.md
+
+# Chunked or processed data
+data/chunks/
+data/processed/
+
+# -------------------------
+# VS Code
+# -------------------------
+.vscode/
+*.code-workspace
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# FastAPI / Uvicorn
+# -------------------------
+*.pid
