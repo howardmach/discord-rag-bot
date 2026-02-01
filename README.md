@@ -163,7 +163,7 @@ In Discord:
 5. Under **Scopes**, check:  
    - `bot`  
 6. Under **Bot Permissions**, enable:  
-    - Read Messages  
+    - Manage Channels  
     - Send Messages  
     - Read Message History  
 7. Copy the generated URL
