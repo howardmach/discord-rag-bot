@@ -146,7 +146,7 @@ http://127.0.0.1:8000/docs
 
 ## 🤖 Run the Discord Bot
 
-python discord_bot/bot.py
+python -m discord_bot.bot
 
 In Discord:
 
@@ -165,7 +165,8 @@ In Discord:
 6. Under **Bot Permissions**, enable:  
     - Manage Channels  
     - Send Messages  
-    - Read Message History  
+    - Read Message History
+    - Manage Messages  
 7. Copy the generated URL
 8. Create a Discord server to host the bot  
 9. Paste it into your browser and invite the bot to your Discord server  
