@@ -4,12 +4,6 @@ from backend.rag.pipeline import rag_answer
 
 app = FastAPI()
 
-# Feedback endpoint
-@app.post("/feedback")
-async def feedback(data: dict):
-    print("Received feedback:", data)
-    return {"status": "ok"}
-
 # Request model
 class ChatRequest(BaseModel):
     message: str
