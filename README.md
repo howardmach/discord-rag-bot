@@ -158,30 +158,26 @@ In Discord:
 
 1. Go to https://discord.com/developers/applications  
 2. Click **“New Application”**  
-3. Give your application a name (e.g., “RAG Assistant”) and click **Create**  
-4. In the left sidebar, go to **Bot**  
-5. Click **“Add Bot”** → **Yes, do it!**  
-6. Under **Privileged Gateway Intents**, enable:  
-   - **Message Content Intent**  
-7. Scroll down and click **Save Changes**  
-8. In the left sidebar, go to **OAuth2 → URL Generator**  
-9. Under **Scopes**, check:  
+3. Give your application a name (e.g., “RAG Assistant”) and click **Create**   
+4. In the left sidebar, go to **OAuth2 → URL Generator**  
+5. Under **Scopes**, check:  
    - `bot`  
-10. Under **Bot Permissions**, enable:  
+6. Under **Bot Permissions**, enable:  
     - Read Messages  
     - Send Messages  
     - Read Message History  
-11. Copy the generated URL  
-12. Paste it into your browser and invite the bot to your Discord server  
-13. Back in your project, put your bot token into `.env` as:  
+7. Copy the generated URL
+8. Create a Discord server to host the bot  
+9. Paste it into your browser and invite the bot to your Discord server  
+10. Back in your project, put your bot token into `.env` as:  
     ```
     DISCORD_TOKEN=YOUR_BOT_TOKEN
     ```  
-14. Start your bot locally with:  
+11. Start your bot locally with:  
     ```
     python discord_bot/bot.py
     ```  
-15. In Discord, test it with:  
+12. In Discord, test it with:  
     ```
     !ask hello
     ```  
