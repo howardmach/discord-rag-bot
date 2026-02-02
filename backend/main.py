@@ -4,16 +4,29 @@ from backend.rag.pipeline import rag_answer
 
 app = FastAPI()
 
-# Request model
+# -----------------------------
+#  Request / Response Models
+# -----------------------------
 class ChatRequest(BaseModel):
     message: str
 
-# Response model
 class ChatResponse(BaseModel):
     answer: str
 
-# Chat endpoint
+# -----------------------------
+#  Chat Endpoint
+# -----------------------------
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
+    # Pass the message into your RAG pipeline
     answer = rag_answer(req.message)
     return ChatResponse(answer=answer)
+
+# -----------------------------
+#  Feedback Endpoint
+# -----------------------------
+@app.post("/feedback")
+def feedback(data: dict):
+    # You can later store this in a DB or log file
+    print("Received feedback:", data)
+    return {"status": "ok"}

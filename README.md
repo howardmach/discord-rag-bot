@@ -192,9 +192,19 @@ In Discord:
 3. FastAPI retrieves top-k chunks from ChromaDB  
 4. Builds a context block  
 5. Sends prompt + context to Llama  
-6. Returns the answer back to Discord  
+6. Returns the answer back to Discord
 
 Everything stays local.
+
+---
+
+## Feedback System
+
+After the bot sends an answer, users can manually react with 👍 or 👎 to rate the response.
+
+The bot does not add reactions automatically and does not react to its own messages.
+
+When a user adds a reaction, the bot records the feedback and sends it to the FastAPI backend for logging or analytics.
 
 ---
 
