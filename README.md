@@ -193,7 +193,6 @@ Follow these steps to create your Discord developer application, configure its p
 
 3. **Configure Bot Permissions**
    * Once you check `bot`, a **Bot Permissions** grid will appear below. Enable the following settings:
-     * [x] `Manage Channels`
      * [x] `Send Messages`
      * [x] `Read Message History`
      * [x] `Manage Messages`
