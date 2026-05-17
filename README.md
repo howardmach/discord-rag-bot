@@ -173,8 +173,6 @@ python -m discord_bot.bot
 
 ---
 
-## 🔐 Discord Bot Setup
-
 ## 🤖 Setting Up the Discord Bot Application
 
 Follow these steps to create your Discord developer application, configure its permissions, and connect it to your server.
