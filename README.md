@@ -61,8 +61,34 @@ cd discord-rag-bot
 
 ### 2. Create a virtual environment
 
+```
 python -m venv .venv
 .\.venv\Scripts\activate
+```
+
+For VS Code users,
+
+1. **Open the Project Folder**
+   Launch VS Code and open the repository folder via `File` > `Open Folder...` (Select `discord-rag-bot`).
+
+2. **Open the Command Palette**
+   Access the VS Code command hub using your operating system's shortcut:
+   * **Windows/Linux:** `Ctrl + Shift + P`
+   * **Mac:** `Cmd + Shift + P`
+
+3. **Select the Create Tool**
+   Type `Python: Create Environment` into the search bar and select it from the dropdown options.
+
+4. **Choose Environment Type**
+   When prompted, select **`Venv`** to utilize Python's native virtual environment module.
+
+5. **Select Python Interpreter**
+   Choose your preferred Python version from the global list installed on your computer (e.g., *Python 3.12* or *Python 3.13*).
+
+6. **Automate Dependency Installation**
+   If a `requirements.txt` file is present in your directory, VS Code will display a checkbox next to it. 
+   * **Check the box** next to `requirements.txt` to automatically install all dependencies.
+   * Click **OK**.
 
 ### 3. Install dependencies
 
@@ -92,12 +118,7 @@ The backend uses:
 
 BAAI/bge-small-en-v1.5
 
-To download it locally:
-
-python - <<EOF
-from sentence_transformers import SentenceTransformer
-SentenceTransformer("BAAI/bge-small-en-v1.5")
-EOF
+There is no download needed as **bge-small-en-v1.5** is part of **sentence-transformers**.
 
 ---
 
@@ -148,41 +169,56 @@ http://127.0.0.1:8000/docs
 
 python -m discord_bot.bot
 
-In Discord:
-
-!ask What is the AI Bootcamp Journey?
-
 ---
 
 ## 🔐 Discord Bot Setup
 
-1. Go to https://discord.com/developers/applications  
-2. Click **“New Application”**  
-3. Give your application a name (e.g., “RAG Assistant”) and click **Create**   
-4. In the left sidebar, go to **OAuth2 → URL Generator**  
-5. Under **Scopes**, check:  
-   - `bot`  
-6. Under **Bot Permissions**, enable:  
-    - Manage Channels  
-    - Send Messages  
-    - Read Message History
-    - Manage Messages  
-7. Copy the generated URL
-8. Create a Discord server to host the bot  
-9. Paste it into your browser and invite the bot to your Discord server  
-10. Back in your project, put your bot token into `.env` as:  
-    ```
-    DISCORD_TOKEN=YOUR_BOT_TOKEN
-    ```  
-11. Start your bot locally with:  
-    ```
-    python discord_bot/bot.py
-    ```  
-12. In Discord, test it with:  
-    ```
-    !ask hello
-    ```  
+## 🤖 Setting Up the Discord Bot Application
 
+Follow these steps to create your Discord developer application, configure its permissions, and connect it to your server.
+
+### Step-by-Step Configuration
+
+1. **Create the Application**
+   * Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+   * Click the **New Application** button in the top right.
+   * Name your application (e.g., `RAG Assistant`) and click **Create**.
+
+2. **Generate the Bot Invite URL**
+   * In the left sidebar, navigate to **OAuth2** → **URL Generator**.
+   * Under the **Scopes** section, check the box for:
+     * [x] `bot`
+
+3. **Configure Bot Permissions**
+   * Once you check `bot`, a **Bot Permissions** grid will appear below. Enable the following settings:
+     * [x] `Manage Channels`
+     * [x] `Send Messages`
+     * [x] `Read Message History`
+     * [x] `Manage Messages`
+
+4. **Invite the Bot to Your Server**
+   * Scroll to the bottom of the page and **Copy** the uniquely generated URL.
+   * Create a new Discord server (or open an existing one where you have administrative access).
+   * Paste the copied URL into a new browser tab, select your server, and authorize the bot.
+
+5. **Configure Environment Tokens**
+   * Return to your project directory. 
+   * Locate your environment configuration file (e.g., `.env` or configuration file) and replace the placeholder text with your actual token:
+     ```
+     YOUR_DISCORD_BOT_TOKEN
+     ```
+
+6. **Launch and Test**
+   * **Start Local Host:** Spin up your bot locally on your machine. *(For the exact startup commands, reference the **Run Discord Bot** section below).*
+   * **Verify Connection:** Ensure the bot appears as "Online" in your Discord server's member list.
+   * **Run Test Commands:** In any text channel the bot has access to, verify its RAG functionality by running the following test queries:
+      ```
+      !ask hello
+      ```
+      and then:
+      ```
+      !ask What is the AI Bootcamp Journey?
+      ```
 ---
 
 ## 🧩 How It Works (RAG Pipeline)
