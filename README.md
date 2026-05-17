@@ -243,6 +243,12 @@ When a user adds a reaction, the bot records the feedback and sends it to the Fa
 
 ---
 
+## Demo Video
+
+https://drive.google.com/file/d/1FuH1PxfdcxrCefEmv3mVHoPrJ1vMzF7a/view?usp=sharing
+
+---
+
 ## 📌 Future Enhancements
 
 - Reranking with BGE cross-encoder  
@@ -250,4 +256,4 @@ When a user adds a reaction, the bot records the feedback and sends it to the Fa
 - Slash commands (`/ask`)  
 - Streaming responses  
 - Retrieval debugging UI  
-- Web dashboard for chunk inspection  
+- Web dashboard for chunk inspection
