@@ -16,27 +16,29 @@ No API keys. No cloud dependencies. 100% offline.
 
 ## 📁 Project Structure
 
+```text
 discord-rag-bot/
-  backend/
-    main.py
-    rag/
-      embeddings.py
-      vectorstore.py
-      retrieval.py
-      llm.py
-      pipeline.py
-    ingest/
-      load_markdown.py
-      chunk_text.py
-      build_vectorstore.py
-  discord_bot/
-    bot.py
-  data/
-    <your markdown files>
-  chroma/
-    index/
-  .env
-  requirements.txt
+├── backend/                   # Core RAG engine and API logic
+│   ├── main.py                # Main backend application entry point
+│   ├── rag/                   # Retrieval-Augmented Generation module
+│   │   ├── embeddings.py      # Generates text vector embeddings via BGE
+│   │   ├── vectorstore.py     # ChromaDB initialization and connection
+│   │   ├── retrieval.py       # Queries the database for context matching
+│   │   ├── llm.py             # Interfaces with the Language Model 
+│   │   └── pipeline.py        # Combines retrieval and generation workflows
+│   └── ingest/                # Data pipeline for populating the database
+│       ├── load_markdown.py   # Parses source files from the data directory
+│       ├── chunk_text.py      # Splits documents into optimal semantic sizes
+│       └── build_vectorstore.py# Embeds chunks and saves them to ChromaDB
+├── discord_bot/               # Discord gateway application
+│   └── bot.py                 # Handles bot logic, events, and !ask commands
+├── data/                      # Storehouse for your source documentation
+│   └── <your markdown files>  # Raw .md context files (e.g., knowledge base)
+├── chroma/                    # Local persistent storage for vector data
+│   └── index/                 # Binary index files managed by ChromaDB
+├── .env                       # Environment variables (API keys, bot tokens)
+└── requirements.txt           # Project dependencies and pinned packages
+```
 
 ---
 
